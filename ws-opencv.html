@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="base64imgage" src="" >
+	<p></p>
+
+	<script>
+		var img_src="data:image/jpg;base64,";
+		let imgobj = document.getElementById("base64imgage");
+		let  ws = new WebSocket('ws://172.16.25.199:9000');
+		var count =0;
+		var wstype;
+
+		ws.addEventListener('open',function(e){
+		  console.log("success")
+		  wstype=e.type;
+		});
+		ws.addEventListener("error",function(e){
+			console.log(e.type);
+			wstype=e.type;
+		});
+		ws.addEventListener("message",function(e){
+			imgobj.src = img_src + e.data;
+		});
+
+		function autosend(){
+		setInterval(function () {
+            ws.send(1);
+			++count;
+			document.getElementsByTagName('p')[0].innerText=count;
+        },150); // 定时器，主动发送请求后台占了CPU50%
+
+		}
+
+		autosend();
+
+
+
+</script>
+
+</body>
+</html>
