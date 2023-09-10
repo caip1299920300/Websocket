@@ -83,4 +83,6 @@ make
 let  ws = new WebSocket('ws://172.16.25.199:9000');
 ```
 
-## 2、直接点击ws-opencv.html
+## 2、直接点击ws-opencv.html,显示如下
+
+![image-20230910105520886](./images/show.jpg)
