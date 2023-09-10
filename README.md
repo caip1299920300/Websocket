@@ -1,4 +1,7 @@
 ## 基于opencv的web可视化Demo
+
+> 安装博客：https://mp.csdn.net/mp_blog/creation/success/132788898
+
 # 一、使用到的相关链接
 
 - 参考
