@@ -105,7 +105,7 @@ int main()
     //   | This is a image example 
 
     VideoCapture cap;
-    //cap.open("/home/wcp/ai/opencv/opencv_linux_test/movie/stu_face.mp4");
+    //cap.open(0);
     cap.open("https://vd3.bdstatic.com/mda-kidf9t0h94ga32tu/v1-cae/sc/mda-kidf9t0h94ga32tu.mp4?v_from_s=hkapp-haokan-hnb&auth_key=1692682929-0-0-fb7bc38357c4376537d42d3f399d63ad&bcevod_channel=searchbox_feed&pd=1&cr=2&cd=0&pt=3&logid=2529742350&vid=9815726611466644147&klogid=2529742350&abtest=111803_4-112162_4");
     cout << "Start Main" << endl;
     if (!cap.isOpened())

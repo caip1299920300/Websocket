@@ -10,6 +10,9 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 find_package(websocketpp REQUIRED)
 include_directories(${WEBSOCKETPP_INCLUDE_DIRS})
 
+find_package(Boost REQUIRED COMPONENTS system)
+include_directories(${Boost_INCLUDE_DIRS})
+
 
 #源文件
 set (SRC_PATH
@@ -30,4 +33,4 @@ add_compile_options(-Wall)
 
 add_executable(WebSocketServer src/main.cpp)
 
-target_link_libraries(WebSocketServer ${OpenCV_LIBS} ${WEBSOCKETPP_LIBRARIES} pthread)
+target_link_libraries(WebSocketServer ${OpenCV_LIBS} ${WEBSOCKETPP_LIBRARIES} ${Boost_LIBRARIES} pthread)
